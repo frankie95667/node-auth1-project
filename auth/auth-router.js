@@ -26,7 +26,7 @@ router.post("/login", (req, res) => {
     .then(([user]) => {
         if(user && bcrypt.compareSync(password, user.password)){
             req.session.user = user;
-            res.status(200).json({message: "User was successfully logged in"})
+            res.status(200).json({message: "Logged in"})
         } else {
             res.status(401).json({message: "User with that username was not found"})
         }
